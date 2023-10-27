@@ -7,29 +7,30 @@
  *
  * Return: Nothing!
  */
+
 void bubble_sort(int *array, size_t size)
 {
-	size_t  i, j;
-	int temp;
-	int swap;
+	int temp, unsortedRange;
+	int swapped;
+	int i;
 
-	for (i = 0; i < size - 1; i++)
-	{
-		swap = 0;
+	if (size < 2)
+		return;
 
-		for (j = 0; j < size - i - 1; j++)
+	unsortedRange = size;
+	do {
+		swapped = 0;
+		for (i = 0; i <= unsortedRange - 2; ++i)
 		{
-			if (array[j] > array[j + 1])
+			if (array[i] > array[i + 1])
 			{
-				temp = array[j];
-				array[j] = array[j + 1];
-				array[j + 1] = temp;
-				swap = 1;
+				temp = array[i];
+				array[i] = array[i + 1];
+				array[i + 1] = temp;
+				swapped++;
 				print_array(array, size);
 			}
 		}
-
-		if (swap == 0)
-			break;
-	}
+		--unsortedRange;
+	} while (swapped);
 }
