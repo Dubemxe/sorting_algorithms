@@ -1,9 +1,9 @@
+#ifndef SORT_H
+#define SORT_H
+
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
-
-#ifndef SORT_H
-#define SORT_H
 
 /* Comparison direction macros for bitonic sort */
 #define UP 0
@@ -19,7 +19,6 @@ typedef enum bool
 	false = 0,
 	true
 } bool;
-=======
 
 /* Structure for doubly linked list */
 
